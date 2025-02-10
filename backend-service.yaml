@@ -1,0 +1,12 @@
+# backend-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  type: NodePort  # Changed to NodePort for local access
+  ports:
+  - port: 3000
+    targetPort: 3000
+  selector:
+    app: backend
